@@ -14,8 +14,16 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/sweetalert2@10.1.0/dist/sweetalert2.min.css' },
+    ],
+    script: [
+      { src: 'https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@0.5.1/dist/lottie-player.min.js', defer: true },
+      { src: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/js/fontawesome.min.js', defer: true },
+      { src: 'https://cdn.jsdelivr.net/npm/sweetalert2@10.1.0/dist/sweetalert2.all.min.js', defer: true },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

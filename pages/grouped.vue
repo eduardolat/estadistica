@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    It's Working 😁
+    It's Working 😁 - Datos agrupados
     <br>
     <lottie-player
       class="mx-auto h-64 animate__animated animate__fadeIn"
