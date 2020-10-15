@@ -5,15 +5,15 @@
 
         <div class="flex">
 
-          <nuxt-link to="/">
+          <nuxt-link to="/" class="flex">
 
             <img src="icon.svg" class="w-18" alt="Ícono de la aplicación">
 
-          </nuxt-link>
+            <div class="flex flex-wrap content-center">
+              <span class="text-2xl ml-2">Estadística</span>
+            </div>
 
-          <div class="flex flex-wrap content-center">
-            <span class="text-2xl ml-2">Estadística</span>
-          </div>
+          </nuxt-link>
 
         </div>
 
@@ -66,9 +66,18 @@
   @apply text-blue-800;
 }
 
+.nuxt-link-exact-active.nav-link{
+  @apply text-purple-800;
+}
+
 @screen md {
   .nav-link:hover {
     @apply border-purple-500;
   }
+
+  .nuxt-link-exact-active.nav-link{
+    @apply border-purple-500;
+  }
 }
+
 </style>
