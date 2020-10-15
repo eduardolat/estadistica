@@ -14,6 +14,8 @@
 
 ## Construcción del proyecto
 
+Una vez desgargado el código fuente se deben instalar todas las dependencias con `npm install` o `yarn install`
+
 Modo desarrollo: `npm run dev` o `yarn dev`
 
 Construir para producción: `npm run build` o `yarn build`
