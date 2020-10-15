@@ -1,20 +1,19 @@
-# estadistica
+# Calculadora Estadística
 
-## Build Setup
+## Integrantes del grupo
 
-```bash
-# install dependencies
-$ npm install
+- Luis Eduardo Jeréz Girón - 1990-19-6340
+- Fernan Emilio Rixquiacche Perez - 1990-19-5454
+- Hugo Ernesto Barrios Rosales - 1990-19-6344
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Requisitos
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+- NodeJS
+- NPM o YARN para la gestión de paquetes
+- Mucha creatividad
 
-# generate static project
-$ npm run generate
-```
+## Construcción del proyecto
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Modo desarrollo: `npm run dev`
+
+Construir para producción: `npm run build`
