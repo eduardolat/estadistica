@@ -14,6 +14,6 @@
 
 ## Construcción del proyecto
 
-Modo desarrollo: `npm run dev`
+Modo desarrollo: `npm run dev` o `yarn dev`
 
-Construir para producción: `npm run build`
+Construir para producción: `npm run build` o `yarn build`
