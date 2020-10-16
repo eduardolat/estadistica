@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center p-2">
     It's Working 😁
     <br>
     <lottie-player
@@ -10,5 +10,10 @@
       loop
       autoplay
     ></lottie-player>
+
+
+    <RawDataInput/>
+
+
   </div>
 </template>

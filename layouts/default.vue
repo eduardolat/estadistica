@@ -2,7 +2,9 @@
   <div>
     <NavBar/>
     <div class="py-2">
-      <Nuxt />
+      <div class="container mx-auto">
+        <Nuxt />
+      </div>
     </div>
   </div>
 </template>
