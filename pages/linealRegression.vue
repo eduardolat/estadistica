@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center p-2">
     It's Working 😁 - Regresión lineal
     <br>
     <lottie-player

@@ -3,7 +3,7 @@
     <NavBar/>
     <div class="py-2">
       <div class="container mx-auto">
-        <Nuxt />
+        <Nuxt class="animate__animated animate__fadeIn"/>
       </div>
     </div>
   </div>
