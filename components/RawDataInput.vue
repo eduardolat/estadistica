@@ -1,8 +1,6 @@
 <template>
   <div>
     <textarea class="textarea" rows="6" :placeholder="placeholder" v-model="data"></textarea>
-    <br>
-    {{cleaned}}
   </div>
 </template>
 
@@ -15,9 +13,9 @@
         data: ''
       }
     },
-    computed: {
-      cleaned() {
-        return this.$cleanDataset(this.data)
+    watch: {
+      data(old) {
+        this.$emit('onClean', this.$cleanDataSet(this.data));
       }
     },
   }

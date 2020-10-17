@@ -21,3 +21,11 @@
 .textarea:focus {
   @apply .outline-none .border-gray-500;
 }
+
+.table {
+  @apply .table-auto .w-full .shadow;
+}
+
+.table td {
+  @apply .px-4 .py-2 .border;
+}
