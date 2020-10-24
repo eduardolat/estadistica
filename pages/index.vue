@@ -39,6 +39,27 @@
       <DataTable :data="cleanData" :orderedData="orderedData"/>
     </div>
 
+    <div v-if="cleanData.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-2 my-2 animate__animated animate__fadeIn">
+      <div>
+        <span class="inline-block text-lg mb-2">
+          Medidas de tendencia central
+        </span>
+        <MeasuresOfCentralTendency :data="cleanData"/>
+      </div>
+      <div>
+        <span class="inline-block text-lg mb-2">
+          Medidas de tendencia central
+        </span>
+        <MeasuresOfCentralTendency :data="cleanData"/>
+      </div>
+      <div>
+        <span class="inline-block text-lg mb-2">
+          Medidas de tendencia central
+        </span>
+        <MeasuresOfCentralTendency :data="cleanData"/>
+      </div>
+    </div>
+
   </div>
 </template>
 <script>

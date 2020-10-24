@@ -72,6 +72,57 @@ const accRelativeFrecuency = (dataset, index) => {
   return relativeFrecuency(dataset, ordered[0]);
 };
 
+/*
+ ** Determina la media aritmética de el dataset
+ */
+const arithmeticMean = dataset => {
+  let sumTotal = dataset.reduce(function(a, b) {
+    return a + b;
+  }, 0);
+  let dataLen = dataset.length;
+  return sumTotal / dataLen;
+};
+
+/*
+ ** Determina la mediana aritmética del dataset
+ */
+const arithmeticMedian = dataset => {
+  let sorted = [...dataset].sort((a, b) => a - b);
+
+  var half = Math.floor(sorted.length / 2);
+
+  if (sorted.length % 2) return sorted[half];
+
+  return (sorted[half - 1] + sorted[half]) / 2.0;
+};
+
+/*
+ ** Determina la moda aritmética del dataset
+ */
+const arithmeticMode = dataset => {
+  let count = {};
+
+  dataset.forEach(e => {
+    if (!(e in count)) {
+      count[e] = 0;
+    }
+
+    count[e]++;
+  });
+
+  let bestElement;
+  let bestCount = 0;
+
+  Object.entries(count).forEach(([k, v]) => {
+    if (v > bestCount) {
+      bestElement = parseInt(k);
+      bestCount = parseInt(v.toString());
+    }
+  });
+
+  return bestElement;
+};
+
 export default ({}, inject) => {
   inject("cleanDataSet", cleanDataSet);
   inject("orderedDataset", orderedDataset);
@@ -79,4 +130,7 @@ export default ({}, inject) => {
   inject("relativeFrecuency", relativeFrecuency);
   inject("accAbsoluteFrecuency", accAbsoluteFrecuency);
   inject("accRelativeFrecuency", accRelativeFrecuency);
+  inject("arithmeticMean", arithmeticMean);
+  inject("arithmeticMedian", arithmeticMedian);
+  inject("arithmeticMode", arithmeticMode);
 };

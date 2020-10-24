@@ -1,42 +1,41 @@
 <template>
-  <div class="overflow-x-auto">
-    <table class="table">
-
-      <thead>
-        <tr class="whitespace-no-wrap md:whitespace-normal">
-          <td><b>Número (&nbsp;x<sub>i</sub>&nbsp;)</b></td>
-          <td><b>Frecuencia Absoluta (&nbsp;f<sub>i</sub>&nbsp;)</b></td>
-          <td><b>Frecuencia Absoluta Acumulada (&nbsp;F<sub>i</sub>&nbsp;)</b></td>
-          <td><b>Frecuencia Relativa (&nbsp;f<sub>r</sub>&nbsp;)</b></td>
-          <td><b>Frecuencia Relativa Acumulada (&nbsp;F<sub>r</sub>&nbsp;)</b></td>
-          <td><b>x<sub>i</sub><sup>2&nbsp;</sup>&nbsp;*&nbsp;f<sub>i</sub></b></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(data, index) in dataTable" :key="index">
-          <td>{{data.number}}</td>
-          <td>{{data.absoluteFrecuency}}</td>
-          <td>{{data.accAbsoluteFrecuency}}</td>
-          <td>{{data.relativeFrecuency.toFixed(2)}}</td>
-          <td>{{data.accRelativeFrecuency.toFixed(2)}}</td>
-          <td>{{data.xi2_fi}}</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>
-            <b>Totales:</b>
-          </td>
-          <td>
-            <b>{{totalAbsoluteFrecuency}}</b>
-          </td>
-          <td><b>-</b></td>
-          <td><b>1.00</b></td>
-          <td><b>-</b></td>
-          <td><b>{{total_xi2_fi}}</b></td>
-        </tr>
-      </tfoot>
-    </table>
+    <div class="overflow-x-auto">
+      <table class="table">
+        <thead>
+          <tr class="whitespace-no-wrap md:whitespace-normal">
+            <td><b>Número (&nbsp;x<sub>i</sub>&nbsp;)</b></td>
+            <td><b>Frecuencia Absoluta (&nbsp;f<sub>i</sub>&nbsp;)</b></td>
+            <td><b>Frecuencia Absoluta Acumulada (&nbsp;F<sub>i</sub>&nbsp;)</b></td>
+            <td><b>Frecuencia Relativa (&nbsp;f<sub>r</sub>&nbsp;)</b></td>
+            <td><b>Frecuencia Relativa Acumulada (&nbsp;F<sub>r</sub>&nbsp;)</b></td>
+            <td><b>x<sub>i</sub><sup>2&nbsp;</sup>&nbsp;*&nbsp;f<sub>i</sub></b></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(data, index) in dataTable" :key="index">
+            <td>{{data.number}}</td>
+            <td>{{data.absoluteFrecuency}}</td>
+            <td>{{data.accAbsoluteFrecuency}}</td>
+            <td>{{data.relativeFrecuency.toFixed(2)}}</td>
+            <td>{{data.accRelativeFrecuency.toFixed(2)}}</td>
+            <td>{{data.xi2_fi}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <b>Totales:</b>
+            </td>
+            <td>
+              <b>{{totalAbsoluteFrecuency}}</b>
+            </td>
+            <td><b>-</b></td>
+            <td><b>1.00</b></td>
+            <td><b>-</b></td>
+            <td><b>{{total_xi2_fi}}</b></td>
+          </tr>
+        </tfoot>
+      </table>
   </div>
 </template>
 
