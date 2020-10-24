@@ -1,21 +1,11 @@
-# Calculadora Estadística
+# STATIC
 
-## Integrantes del grupo
+**This directory is not required, you can delete it if you don't want to use it.**
 
-- Luis Eduardo Jeréz Girón - 1990-19-6340
-- Fernan Emilio Rixquiacche Perez - 1990-19-5454
-- Hugo Ernesto Barrios Rosales - 1990-19-6344
+This directory contains your static files.
+Each file inside this directory is mapped to `/`.
+Thus you'd want to delete this README.md before deploying to production.
 
-## Requisitos
+Example: `/static/robots.txt` is mapped as `/robots.txt`.
 
-- NodeJS
-- NPM o YARN para la gestión de paquetes
-- Mucha creatividad
-
-## Construcción del proyecto
-
-Una vez desgargado el código fuente se deben instalar todas las dependencias con `npm install` o `yarn install`
-
-Modo desarrollo: `npm run dev` o `yarn dev`
-
-Construir para producción: `npm run build` o `yarn build`
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#static).
