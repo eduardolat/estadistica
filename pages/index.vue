@@ -52,18 +52,19 @@
         <span class="inline-block text-lg mb-2">
           Cuartiles
         </span>
-        <Quartiles :data="cleanData"/>
+        <Quartiles :data="cleanData" class="mb-2"/>
 
         <span class="inline-block text-lg mb-2">
           Deciles
         </span>
-        <Decile :data="cleanData"/>
-      </div>
-      <div>
+        <Decile :data="cleanData" class="mb-2"/>
+
         <span class="inline-block text-lg mb-2">
           Percentiles
         </span>
-        <Percentile :data="cleanData"/>
+        <Percentile :data="cleanData" class="mb-2"/>
+      </div>
+      <div>
       </div>
     </div>
 

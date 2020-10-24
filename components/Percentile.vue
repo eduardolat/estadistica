@@ -1,30 +1,25 @@
 <template>
-  <div class="overflow-x-auto">
-    <table class="table">
-        <tbody class="text-left">
-          <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Percentil #1 (P<sub>1</sub>)</b></td>
-            <td>{{$percentile(data, 1).toFixed(2)}}</td>
-          </tr>
-          <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Percentil #2 (P<sub>2</sub>)</b></td>
-            <td>{{$percentile(data, 2).toFixed(2)}}</td>
-          </tr>
-          <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Percentil #3 (P<sub>3</sub>)</b></td>
-            <td>{{$percentile(data, 3).toFixed(2)}}</td>
-          </tr>
-          <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Percentil #24 (P<sub>24</sub>)</b></td>
-            <td>{{$percentile(data, 24).toFixed(2)}}</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="flex justify-center">
+
+    <select v-model="current">
+      <option v-for="n in 99" :key="n" :value="n">
+        P<sub>{{n}}</sub> - Percentil #{{n}}
+      </option>
+    </select>
+    <span class="mt-1 ml-2 text-xl">
+    =&nbsp;{{$percentile(data, current).toFixed(2)}}
+    </span>
+
   </div>
 </template>
 
 <script>
   export default {
+    data() {
+      return {
+        current: 1
+      }
+    },
     props: {
       data: {
         type: Array,
