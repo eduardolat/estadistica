@@ -144,6 +144,11 @@ const cuadraticMean = dataset => {
  */
 const quartil = (dataset, q) => ((dataset.length + 1) * q) / 4;
 
+/*
+ ** Determina los deciles del dataset
+ */
+const decile = (dataset, q) => ((dataset.length + 1) * q) / 10;
+
 export default ({}, inject) => {
   inject("cleanDataSet", cleanDataSet);
   inject("orderedDataset", orderedDataset);
@@ -157,4 +162,5 @@ export default ({}, inject) => {
   inject("geometricMean", geometricMean);
   inject("cuadraticMean", cuadraticMean);
   inject("quartil", quartil);
+  inject("decile", decile);
 };

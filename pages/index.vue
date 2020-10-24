@@ -56,9 +56,9 @@
       </div>
       <div>
         <span class="inline-block text-lg mb-2">
-          Medidas de tendencia central
+          Deciles
         </span>
-        <MeasuresOfCentralTendency :data="cleanData"/>
+        <Decile :data="cleanData"/>
       </div>
     </div>
 
