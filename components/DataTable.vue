@@ -85,6 +85,17 @@
         return this.dataTable.reduce((prev, current) => prev + current.d_absolute_2, 0);
       },
     },
+    watch: {
+      dataTable(old) {
+        this.$emit('onDataFormatted', this.dataTable);
+        this.$emit('onDataFormattedTotals', {
+          totalAbsoluteFrecuency: this.totalAbsoluteFrecuency,
+          total_xi2_fi: this.total_xi2_fi,
+          total_d_absolute: this.total_d_absolute,
+          total_d_absolute_2: this.total_d_absolute_2
+        });
+      }
+    },
   }
 </script>
 

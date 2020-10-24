@@ -38,16 +38,10 @@
       <span class="inline-block text-lg mb-2">
         Tabla de datos
       </span>
-      <DataTable :data="cleanData" :orderedData="orderedData"/>
+      <DataTable :data="cleanData" :orderedData="orderedData" @onDataFormatted="(data) => dataFormatted = data" @onDataFormattedTotals="(data) => dataFormattedTotals = data"/>
     </div>
 
-    <div v-if="cleanData.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-2 my-2 animate__animated animate__fadeIn">
-      <div>
-        <span class="inline-block text-lg mb-2">
-          Medidas de tendencia central
-        </span>
-        <MeasuresOfCentralTendency :data="cleanData"/>
-      </div>
+    <div v-if="cleanData.length > 0" class="grid grid-cols-1 md:grid-cols-3 gap-3 my-2 animate__animated animate__fadeIn">
       <div>
         <span class="inline-block text-lg mb-2">
           Cuartiles
@@ -65,16 +59,32 @@
         <Percentile :data="cleanData" class="mb-2"/>
       </div>
       <div>
+        <span class="inline-block text-lg mb-2">
+          Medidas de tendencia central
+        </span>
+        <MeasuresOfCentralTendency :data="cleanData"/>
+      </div>
+      <div>
+        <span class="inline-block text-lg mb-2">
+          Otros datos
+        </span>
+        <ExtraData :data="cleanData" :dataFormatted="dataFormatted" :dataFormattedTotals="dataFormattedTotals"/>
       </div>
     </div>
-
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      cleanData: []
+      cleanData: [],
+      dataFormatted: [],
+      dataFormattedTotals: {
+        totalAbsoluteFrecuency: 0,
+        total_xi2_fi: 0,
+        total_d_absolute: 0,
+        total_d_absolute_2: 0
+      }
     }
   },
   computed: {
