@@ -71,6 +71,14 @@
         <ExtraData :data="cleanData" :dataFormatted="dataFormatted" :dataFormattedTotals="dataFormattedTotals"/>
       </div>
     </div>
+
+    <div v-if="cleanData.length > 0" class="my-8 animate__animated animate__fadeIn">
+      <span class="inline-block text-xl font-bold mb-2">
+        Histograma
+      </span>
+      <Histogram :data="cleanData" :orderedData="orderedData"/>
+    </div>
+
   </div>
 </template>
 <script>

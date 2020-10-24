@@ -45,6 +45,10 @@ export default {
         src:
           "https://cdn.jsdelivr.net/npm/sweetalert2@10.1.0/dist/sweetalert2.all.min.js",
         defer: true
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js",
+        defer: true
       }
     ]
   },
