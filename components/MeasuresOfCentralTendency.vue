@@ -29,12 +29,11 @@
 
 <script>
   export default {
-    props: {
-      data: {
-        type: Array,
-        default: []
+    computed: {
+      data() {
+        return this.$store.state.statistics.data
       }
-    },
+    }
   }
 </script>
 

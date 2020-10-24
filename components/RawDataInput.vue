@@ -14,8 +14,9 @@
       }
     },
     watch: {
-      data(old) {
-        this.$emit('onClean', this.$cleanDataSet(this.data));
+      data() {
+        this.$store.commit('statistics/setData', this.$cleanDataSet(this.data));
+        this.$store.commit('statistics/setOrderedData', this.$orderedDataSet(this.$store.state.statistics.data));
       }
     },
   }

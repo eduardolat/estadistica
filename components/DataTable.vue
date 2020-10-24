@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(data, index) in dataTable" :key="index">
+          <tr v-for="(data, index) in $store.state.statistics.dataTable" :key="index">
             <td>{{data.number}}</td>
             <td>{{data.absoluteFrecuency}}</td>
             <td>{{data.accAbsoluteFrecuency}}</td>
@@ -31,14 +31,14 @@
               <b>Sumatorio&nbsp;&Sigma;</b>
             </td>
             <td>
-              <b>{{totalAbsoluteFrecuency}}</b>
+              <b>{{$store.state.statistics.totalAbsoluteFrecuency}}</b>
             </td>
             <td><b>-</b></td>
             <td><b>1.00</b></td>
             <td><b>-</b></td>
-            <td><b>{{total_xi2_fi.toFixed(2)}}</b></td>
-            <td><b>{{total_d_absolute.toFixed(2)}}</b></td>
-            <td><b>{{total_d_absolute_2.toFixed(2)}}</b></td>
+            <td><b>{{$store.state.statistics.total_xi2_fi.toFixed(2)}}</b></td>
+            <td><b>{{$store.state.statistics.total_d_absolute.toFixed(2)}}</b></td>
+            <td><b>{{$store.state.statistics.total_d_absolute_2.toFixed(2)}}</b></td>
           </tr>
         </tfoot>
       </table>
@@ -47,17 +47,13 @@
 
 <script>
   export default {
-    props: {
-      data: {
-        type: Array,
-        default: []
-      },
-      orderedData: {
-        type: Array,
-        default: []
-      },
-    },
     computed: {
+      data() {
+        return this.$store.state.statistics.data;
+      },
+      orderedData() {
+        return this.$store.state.statistics.orderedData;
+      },
       dataTable() {
         return this.orderedData.map((number, index) => {
           return {
@@ -86,19 +82,15 @@
       },
     },
     watch: {
-      dataTable(old) {
-        this.$emit('onDataFormatted', this.dataTable);
-        this.$emit('onDataFormattedTotals', {
-          totalAbsoluteFrecuency: this.totalAbsoluteFrecuency,
-          total_xi2_fi: this.total_xi2_fi,
-          total_d_absolute: this.total_d_absolute,
-          total_d_absolute_2: this.total_d_absolute_2
-        });
+      dataTable() {
+
+        this.$store.commit('statistics/setDataTable', this.dataTable);
+        this.$store.commit('statistics/setTotalAbsoluteFrecuency', this.totalAbsoluteFrecuency);
+        this.$store.commit('statistics/setTotal_xi2_fi', this.total_xi2_fi);
+        this.$store.commit('statistics/setTotal_d_absolute', this.total_d_absolute);
+        this.$store.commit('statistics/setTotal_d_absolute_2', this.total_d_absolute_2);
+
       }
     },
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

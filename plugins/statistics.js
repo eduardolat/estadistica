@@ -21,7 +21,7 @@ const cleanDataSet = dataset => {
 /*
  ** Ordena los datos ascendentemente y elimina los repetidos
  */
-const orderedDataset = dataset => {
+const orderedDataSet = dataset => {
   return dataset
     .filter((item, pos) => {
       return dataset.indexOf(item) == pos;
@@ -40,7 +40,7 @@ const absoluteFrecuency = (dataset, number) => {
  ** Determinar la frecuencia absoluta acumulada de un número del dataset
  */
 const accAbsoluteFrecuency = (dataset, index) => {
-  let ordered = orderedDataset(dataset);
+  let ordered = orderedDataSet(dataset);
   if (index > 0) {
     let acc = 0;
     for (let i = 0; i < index; i++) {
@@ -62,7 +62,7 @@ const relativeFrecuency = (dataset, number) => {
  ** Determinar la frecuencia relativa acumulada de un número del dataset
  */
 const accRelativeFrecuency = (dataset, index) => {
-  let ordered = orderedDataset(dataset);
+  let ordered = orderedDataSet(dataset);
   if (index > 0) {
     let acc = 0;
     for (let i = 0; i < index; i++) {
@@ -157,7 +157,7 @@ const percentile = (dataset, q) => ((dataset.length + 1) * q) / 100;
 
 export default ({}, inject) => {
   inject("cleanDataSet", cleanDataSet);
-  inject("orderedDataset", orderedDataset);
+  inject("orderedDataSet", orderedDataSet);
   inject("absoluteFrecuency", absoluteFrecuency);
   inject("relativeFrecuency", relativeFrecuency);
   inject("accAbsoluteFrecuency", accAbsoluteFrecuency);

@@ -29,40 +29,22 @@
 
 <script>
 export default {
-    props: {
-      data: {
-        type: Array,
-        default: []
-      },
-      dataFormatted: {
-        type: Array,
-        default: []
-      },
-      dataFormattedTotals: {
-        type: Object,
-        default: {
-          totalAbsoluteFrecuency: 0,
-          total_xi2_fi: 0,
-          total_d_absolute: 0,
-          total_d_absolute_2: 0
-        }
-      },
-    },
+
     computed: {
       medianDeviation() {
-        return this.dataFormattedTotals.total_d_absolute / this.dataFormattedTotals.totalAbsoluteFrecuency;
+        return this.$store.state.statistics.total_d_absolute / this.$store.state.statistics.totalAbsoluteFrecuency;
       },
       variance() {
-        return this.dataFormattedTotals.total_d_absolute_2 / this.dataFormattedTotals.totalAbsoluteFrecuency;
+        return this.$store.state.statistics.total_d_absolute_2 / this.$store.state.statistics.totalAbsoluteFrecuency;
       },
       typicalDeviation() {
         return Math.sqrt(this.variance);
       },
       coefficientOfVariation(){
-        return (this.typicalDeviation / this.$arithmeticMean(this.data)) * 100;
+        return (this.typicalDeviation / this.$arithmeticMean(this.$store.state.statistics.data)) * 100;
       },
       kurtosis(){
-        return ((1/2) * (this.$quartil(this.data, 3) - this.$quartil(this.data, 1))) / (this.$percentile(this.data, 90) - this.$percentile(this.data, 10));
+        return ((1/2) * (this.$quartil(this.$store.state.statistics.data, 3) - this.$quartil(this.$store.state.statistics.data, 1))) / (this.$percentile(this.$store.state.statistics.data, 90) - this.$percentile(this.$store.state.statistics.data, 10));
       }
     },
   }
