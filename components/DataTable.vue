@@ -20,7 +20,7 @@
             <td>{{data.accAbsoluteFrecuency}}</td>
             <td>{{data.relativeFrecuency.toFixed(2)}}</td>
             <td>{{data.accRelativeFrecuency.toFixed(2)}}</td>
-            <td>{{data.xi2_fi}}</td>
+            <td>{{data.xi2_fi.toFixed(2)}}</td>
             <td>{{data.d_absolute.toFixed(2)}}</td>
             <td>{{data.d_absolute_2.toFixed(2)}}</td>
           </tr>
@@ -36,7 +36,7 @@
             <td><b>-</b></td>
             <td><b>1.00</b></td>
             <td><b>-</b></td>
-            <td><b>{{total_xi2_fi}}</b></td>
+            <td><b>{{total_xi2_fi.toFixed(2)}}</b></td>
             <td><b>{{total_d_absolute.toFixed(2)}}</b></td>
             <td><b>{{total_d_absolute_2.toFixed(2)}}</b></td>
           </tr>

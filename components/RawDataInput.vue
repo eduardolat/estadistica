@@ -9,7 +9,7 @@
   export default {
     data() {
       return {
-        placeholder: 'Ingresa los números, separados por una coma, un espacio o un salto de linea',
+        placeholder: 'Ingresa los números, separados por una coma, un punto y coma, un espacio o un salto de linea.',
         data: ''
       }
     },

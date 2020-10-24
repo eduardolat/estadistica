@@ -5,15 +5,16 @@
  */
 const cleanDataSet = dataset => {
   return dataset
-    .split(/[\n\s,]+/)
+    .split(/[\n\s,;]+/)
     .filter(n => {
-      if (!!n.replace(/[^0-9]/g, "").length) {
+      let rep = n.replace(/[^0-9]+(\.[0-9]{1,2})/g, "");
+      if (!!rep.length && !isNaN(rep)) {
         return true;
       }
       return false;
     })
     .map(n => {
-      return parseInt(n.replace(/[^0-9]/g, ""));
+      return parseFloat(n.replace(/[^0-9]+(\.[0-9]{1,2})/g, ""));
     });
 };
 
