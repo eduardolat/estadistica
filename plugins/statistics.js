@@ -142,10 +142,7 @@ const cuadraticMean = dataset => {
 /*
  ** Determina los cuartiles del dataset
  */
-const quartil1 = dataset => ((dataset.length + 1) * 1) / 4;
-const quartil2 = dataset => ((dataset.length + 1) * 2) / 4;
-const quartil3 = dataset => ((dataset.length + 1) * 3) / 4;
-const quartil4 = dataset => ((dataset.length + 1) * 4) / 4;
+const quartil = (dataset, q) => ((dataset.length + 1) * q) / 4;
 
 export default ({}, inject) => {
   inject("cleanDataSet", cleanDataSet);
@@ -159,8 +156,5 @@ export default ({}, inject) => {
   inject("arithmeticMode", arithmeticMode);
   inject("geometricMean", geometricMean);
   inject("cuadraticMean", cuadraticMean);
-  inject("quartil1", quartil1);
-  inject("quartil2", quartil2);
-  inject("quartil3", quartil3);
-  inject("quartil4", quartil4);
+  inject("quartil", quartil);
 };
