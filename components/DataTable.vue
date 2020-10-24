@@ -8,9 +8,9 @@
             <td><b>Frecuencia Absoluta Acumulada (&nbsp;F<sub>i</sub>&nbsp;)</b></td>
             <td><b>Frecuencia Relativa (&nbsp;f<sub>r</sub>&nbsp;)</b></td>
             <td><b>Frecuencia Relativa Acumulada (&nbsp;F<sub>r</sub>&nbsp;)</b></td>
-            <td><b>x<sub>i</sub><sup>2&nbsp;</sup>&nbsp;*&nbsp;f<sub>i</sub></b></td>
-            <td><b>|&nbsp;d&nbsp;|</b></td>
-            <td><b>|&nbsp;d&nbsp;|&nbsp;<sup>2</sup></b></td>
+            <td><b>Valor Por Frecuencia Absoluta (&nbsp;x<sub>i</sub><sup>2&nbsp;</sup>&nbsp;*&nbsp;f<sub>i</sub>&nbsp;)</b></td>
+            <td><b>Desviación Absoluta (&nbsp;|&nbsp;d&nbsp;|&nbsp;)</b></td>
+            <td><b>Varianza (&nbsp;|&nbsp;d&nbsp;|&nbsp;<sup>2</sup>&nbsp;)</b></td>
           </tr>
         </thead>
         <tbody>
