@@ -48,9 +48,9 @@
       </div>
       <div>
         <span class="inline-block text-lg mb-2">
-          Medidas de tendencia central
+          Cuartiles
         </span>
-        <MeasuresOfCentralTendency :data="cleanData"/>
+        <Quartiles :data="cleanData"/>
       </div>
       <div>
         <span class="inline-block text-lg mb-2">
