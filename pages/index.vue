@@ -10,6 +10,8 @@
       autoplay
     ></lottie-player>
 
+    <h1 class="my-3 text-2xl font-bold">Calculadora de datos no agrupados</h1>
+    <p class="mb-3">Ingresa los datos y en báse a ellos se calcularan sus medidas de tendencia central, cuartiles, deciles, percentiles, histograma, etc.</p>
 
     <RawDataInput @onClean="(data) => cleanData = data"/>
 
