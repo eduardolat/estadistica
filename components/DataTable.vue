@@ -9,6 +9,7 @@
             <td><b>Frecuencia Relativa (&nbsp;f<sub>r</sub>&nbsp;)</b></td>
             <td><b>Frecuencia Relativa Acumulada (&nbsp;F<sub>r</sub>&nbsp;)</b></td>
             <td><b>x<sub>i</sub><sup>2&nbsp;</sup>&nbsp;*&nbsp;f<sub>i</sub></b></td>
+            <td><b>|&nbsp;d&nbsp;|</b></td>
           </tr>
         </thead>
         <tbody>
@@ -19,12 +20,13 @@
             <td>{{data.relativeFrecuency.toFixed(2)}}</td>
             <td>{{data.accRelativeFrecuency.toFixed(2)}}</td>
             <td>{{data.xi2_fi}}</td>
+            <td>{{data.d_absolute}}</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td>
-              <b>Totales:</b>
+              <b>Sumatorio&nbsp;&Sigma;</b>
             </td>
             <td>
               <b>{{totalAbsoluteFrecuency}}</b>
@@ -33,6 +35,7 @@
             <td><b>1.00</b></td>
             <td><b>-</b></td>
             <td><b>{{total_xi2_fi}}</b></td>
+            <td><b>{{total_d_absolute}}</b></td>
           </tr>
         </tfoot>
       </table>
@@ -60,7 +63,8 @@
             accAbsoluteFrecuency: this.$accAbsoluteFrecuency(this.data, index),
             relativeFrecuency: this.$relativeFrecuency(this.data, number),
             accRelativeFrecuency: this.$accRelativeFrecuency(this.data, index),
-            xi2_fi: (number * number) * this.$absoluteFrecuency(this.data, number)
+            xi2_fi: (number * number) * this.$absoluteFrecuency(this.data, number),
+            d_absolute: Math.abs(this.$absoluteFrecuency(this.data, number) - this.$arithmeticMean(this.data))
           }
         });
       },
@@ -69,6 +73,9 @@
       },
       total_xi2_fi() {
         return this.dataTable.reduce((prev, current) => prev + current.xi2_fi, 0);
+      },
+      total_d_absolute() {
+        return this.dataTable.reduce((prev, current) => prev + current.d_absolute, 0);
       }
     },
   }
