@@ -73,14 +73,11 @@ const accRelativeFrecuency = (dataset, index) => {
 };
 
 /*
- ** Determina la media aritmética de el dataset
+ ** Determina la media aritmética del dataset
  */
 const arithmeticMean = dataset => {
-  let sumTotal = dataset.reduce(function(a, b) {
-    return a + b;
-  }, 0);
-  let dataLen = dataset.length;
-  return sumTotal / dataLen;
+  let sumTotal = dataset.reduce((a, b) => a + b, 0);
+  return sumTotal / dataset.length;
 };
 
 /*
@@ -123,6 +120,25 @@ const arithmeticMode = dataset => {
   return bestElement;
 };
 
+/*
+ ** Determina la media geométrica del dataset
+ */
+const geometricMean = dataset => {
+  let total = dataset.reduce((a, b) => a * b, 1);
+  return Math.pow(total, 1 / dataset.length);
+};
+
+/*
+ ** Determina la media cuadratica del dataset
+ */
+const cuadraticMean = dataset => {
+  let total = 0;
+  dataset.forEach(n => {
+    total += Math.pow(n, 2);
+  });
+  return Math.sqrt(total / dataset.length);
+};
+
 export default ({}, inject) => {
   inject("cleanDataSet", cleanDataSet);
   inject("orderedDataset", orderedDataset);
@@ -133,4 +149,6 @@ export default ({}, inject) => {
   inject("arithmeticMean", arithmeticMean);
   inject("arithmeticMedian", arithmeticMedian);
   inject("arithmeticMode", arithmeticMode);
+  inject("geometricMean", geometricMean);
+  inject("cuadraticMean", cuadraticMean);
 };
