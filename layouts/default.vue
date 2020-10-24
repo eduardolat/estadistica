@@ -6,5 +6,6 @@
         <Nuxt class="animate__animated animate__fadeIn"/>
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
