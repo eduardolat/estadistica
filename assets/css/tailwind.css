@@ -26,6 +26,15 @@
   @apply .table-auto .w-full .shadow;
 }
 
+.table thead,
+.table tfoot {
+  @apply bg-gray-100;
+}
+
+.table tbody tr:hover {
+  @apply bg-gray-200;
+}
+
 .table td {
   @apply .px-4 .py-2 .border;
 }
