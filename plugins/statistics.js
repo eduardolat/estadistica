@@ -149,6 +149,11 @@ const quartil = (dataset, q) => ((dataset.length + 1) * q) / 4;
  */
 const decile = (dataset, q) => ((dataset.length + 1) * q) / 10;
 
+/*
+ ** Determina los percentiles del dataset
+ */
+const percentile = (dataset, q) => ((dataset.length + 1) * q) / 100;
+
 export default ({}, inject) => {
   inject("cleanDataSet", cleanDataSet);
   inject("orderedDataset", orderedDataset);
@@ -163,4 +168,5 @@ export default ({}, inject) => {
   inject("cuadraticMean", cuadraticMean);
   inject("quartil", quartil);
   inject("decile", decile);
+  inject("percentile", percentile);
 };
