@@ -49,6 +49,9 @@ export default {
       {
         src: "https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js",
         defer: true
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/ml@5.0.0/dist/ml.min.js"
       }
     ]
   },

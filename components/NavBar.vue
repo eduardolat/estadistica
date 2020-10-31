@@ -27,8 +27,7 @@
           <div :class="{'hidden': !openMenu}" class="block w-full md:w-auto md:flex md:flex-wrap content-center animate__animated animate__fadeIn z-0">
 
             <nuxt-link class="block text-center my-2 nav-link" to="/">Datos no agrupados</nuxt-link>
-            <!-- <nuxt-link class="block text-center my-2 nav-link" to="/grouped">Datos agrupados</nuxt-link>
-            <nuxt-link class="block text-center my-2 nav-link" to="/linealRegression">Regresión lineal</nuxt-link> -->
+            <nuxt-link class="block text-center my-2 nav-link" to="/linealRegression">Regresión lineal</nuxt-link>
             <a         class="block text-center my-2 github-link" href="https://github.com/eduardodevop/estadistica" target="_blank">
               <i class="fab fa-github"></i> Github
             </a>
