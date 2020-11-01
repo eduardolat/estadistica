@@ -59,8 +59,14 @@ export default {
 <style scoped>
 
 #fixed-footer-div{
-  @apply h-10 border bg-white fixed z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
+  @apply h-10 border-0 border-t bg-white fixed z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
 }
+
+.dark-mode #fixed-footer-div{
+  @apply h-10 fixed border-t-0 z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
+  background-color: RGBA(11, 11, 11);
+}
+
 
 @screen md {
 
@@ -69,6 +75,11 @@ export default {
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       background-color: rgba(255, 255, 255, 0.7);
+    }
+    .dark-mode #fixed-footer-div{
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(11, 11, 11, 0.7);
     }
   }
 
