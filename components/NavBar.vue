@@ -60,6 +60,11 @@
   @apply p-2 shadow fixed z-40 w-full bg-white;
 }
 
+.dark-mode #fixed-nav-div {
+  @apply p-2 shadow fixed z-40 w-full;
+  background-color: RGBA(11, 11, 11);
+}
+
 .nav-link {
   @apply mx-2 text-lg border-b-2 border-transparent;
 }
@@ -68,16 +73,32 @@
   @apply text-purple-800;
 }
 
+.dark-mode .nav-link:hover {
+  @apply text-gray-300;
+}
+
 .github-link {
   @apply text-blue-600 mx-2 text-lg;
+}
+
+.dark-mode .github-link {
+  @apply text-white mx-2 text-lg;
 }
 
 .github-link:hover {
   @apply text-blue-800;
 }
 
+.dark-mode .github-link:hover {
+  @apply text-gray-300;
+}
+
 .nuxt-link-exact-active.nav-link{
   @apply text-purple-800;
+}
+
+.dark-mode .nuxt-link-exact-active.nav-link {
+  @apply text-gray-300;
 }
 
 @screen md {
@@ -94,6 +115,12 @@
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .dark-mode #fixed-nav-div {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(11, 11, 11, 0.8);
     }
   }
 
