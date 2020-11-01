@@ -131,5 +131,8 @@ export default {
       this.predicted = this.regression.predict(parseFloat(this.toPredict));
     }
   },
+  destroyed () {
+    this.$store.commit('linealRegression/resetState');
+  },
 }
 </script>

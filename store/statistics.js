@@ -1,14 +1,21 @@
-export const state = () => ({
-  data: [],
-  orderedData: [],
-  dataTable: [],
-  totalAbsoluteFrecuency: 0,
-  total_xi2_fi: 0,
-  total_d_absolute: 0,
-  total_d_absolute_2: 0
-});
+const getDefaultState = () => {
+  return {
+    data: [],
+    orderedData: [],
+    dataTable: [],
+    totalAbsoluteFrecuency: 0,
+    total_xi2_fi: 0,
+    total_d_absolute: 0,
+    total_d_absolute_2: 0
+  };
+};
+
+export const state = getDefaultState();
 
 export const mutations = {
+  resetState(state) {
+    Object.assign(state, getDefaultState());
+  },
   setData(state, data) {
     state.data = data;
   },

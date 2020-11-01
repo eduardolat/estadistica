@@ -91,5 +91,8 @@ export default {
       return this.$store.state.statistics.orderedData;
     }
   },
+  destroyed () {
+    this.$store.commit('statistics/resetState');
+  },
 }
 </script>

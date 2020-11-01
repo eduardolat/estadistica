@@ -1,12 +1,19 @@
-export const state = () => ({
-  xTrain: [],
-  yTrain: [],
-  current_xTrain: [],
-  current_yTrain: [],
-  regression: null
-});
+const getDefaultState = () => {
+  return {
+    xTrain: [],
+    yTrain: [],
+    current_xTrain: [],
+    current_yTrain: [],
+    regression: null
+  };
+};
+
+export const state = getDefaultState();
 
 export const mutations = {
+  resetState(state) {
+    Object.assign(state, getDefaultState());
+  },
   set_xTrain(state, data) {
     state.xTrain = data;
   },
