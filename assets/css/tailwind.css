@@ -46,3 +46,11 @@ select {
 select:focus {
   @apply .outline-none .border-gray-500;
 }
+
+.text-input {
+  @apply bg-gray-200 rounded py-2 px-4 .border w-full;
+}
+
+.text-input:focus {
+  @apply .outline-none .border-gray-500;
+}

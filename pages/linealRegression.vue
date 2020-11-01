@@ -21,7 +21,44 @@
     <LinealRegressionRawDataInputs/>
 
     <div>
-      <button class="btn-primary w-full my-2">Computar modelo</button>
+      <button class="btn-primary w-full my-2" @click="compute()">
+        Computar modelo
+        <i class="fas fa-brain" v-if="xTrain.length == yTrain.length"></i>
+        <i class="fas fa-exclamation" v-if="xTrain.length != yTrain.length"></i>
+      </button>
+    </div>
+
+    <div class="my-3 pt-3 border-t animate__animated animate__fadeInUp" v-if="regression">
+
+      <h1 class="text-xl font-bold">Regresión lineal calculada con éxito</h1>
+      <div class="text-lg my-2">
+        La ecuación del modelo es:
+        <span id="equation">Y&nbsp;=&nbsp;(&nbsp;{{regression.slope.toFixed(2)}}&nbsp;*&nbsp;X&nbsp;)&nbsp;+&nbsp;{{regression.intercept.toFixed(2)}}</span>
+      </div>
+
+      <div class="text-xl font-bold my-4">
+        Gráfica del modelo
+        <LinealRegressionChart/>
+      </div>
+
+      <div class="my-4">
+        <span class="text-xl font-bold">Calcular predicción</span>
+        <p>Ingresa un valor para X y en base a la regresión lineal se calculará su valor más probable en Y</p>
+        <div class="py-4 md:flex justify-center space">
+          <div class="px-2 whitespace-no-wrap">
+            <input type="text" class="text-input text-center w-full md:w-42" placeholder="Ingresa el valor de X" v-model="toPredict">
+          </div>
+          <div class="px-2 pt-1 md:py-2 text-lg whitespace-no-wrap">
+            <i class="fas fa-hand-point-right hidden md:inline"></i>
+            <i class="fas fa-hand-point-down inline md:hidden"></i>
+          </div>
+          <div class="px-2 md:py-2 text-lg whitespace-no-wrap">
+            <span v-if="!isNaN(predicted)">Valor predecido: {{ predicted.toFixed(2) }}</span>
+            <span v-if="isNaN(predicted)">Valor predecido: N/A</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -33,27 +70,66 @@ export default {
       title: "Calcular Regresión Lineal Simple",
     }
   },
-  mounted() {
+  data() {
+    return {
+      toPredict: 0,
+      predicted: 0
+    }
+  },
+  computed: {
+    xTrain() {
+      return this.$store.state.linealRegression.xTrain;
+    },
+    yTrain() {
+      return this.$store.state.linealRegression.yTrain;
+    },
+    regression() {
+      return this.$store.state.linealRegression.regression;
+    }
+  },
+  methods: {
+    compute() {
 
-    const xTrain = [30, 28, 32, 25, 25, 25, 22, 24];
-    const yTrain = [25, 30, 27, 40, 42, 40, 50, 45];
+      if(this.xTrain.length < 1){
+        Swal.fire(
+          'Ups... Ocurrió un error 😥',
+          'Parece que aún no has ingresado los datos',
+          'error'
+        )
+        return;
+      }
 
-    const xTest = [35, 40];
-    const yTest = [30, 25];
+      if(this.xTrain.length != this.yTrain.length){
+        Swal.fire(
+          'Ups... Ocurrió un error 😥',
+          'Debes ingresar la misma cantidad de datos en el eje X que en el eje Y',
+          'error'
+        )
+        return;
+      }
 
-    const regression = new ML.SimpleLinearRegression(xTrain, yTrain);
+      const regression = new ML.SimpleLinearRegression(this.xTrain, this.yTrain);
+      this.$store.commit('linealRegression/set_regression', regression);
+      this.$store.commit('linealRegression/set_current_xTrain', this.xTrain);
+      this.$store.commit('linealRegression/set_current_yTrain', this.yTrain);
 
-    console.log(regression.slope);
-    console.log(regression.intercept);
-    console.log(regression.coefficients);
+      console.log("Slope:", regression.slope);
+      console.log("Intercept", regression.intercept);
+      console.log("Coefficients", regression.coefficients);
 
-    console.log(regression.toString());;
+      // Si se quisiera sacar un punteo de la exactitud del model se deberia hacer de la siguiente manera
+      // regression.score(xTest, yTest);
+      // { r: 1, r2: 1, chi2: 0, rmsd: 0 }
 
-    console.log(regression.score(xTest, yTest));;
-    // { r: 1, r2: 1, chi2: 0, rmsd: 0 }
+      // Para predecir un numero en base a la regresión
+      // regression.predict(28);
 
-    console.log(regression.predict(28));
-
-  }
+    }
+  },
+  watch: {
+    toPredict(newValue, oldValue) {
+      this.predicted = this.regression.predict(parseFloat(this.toPredict));
+    }
+  },
 }
 </script>

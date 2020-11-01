@@ -1,11 +1,11 @@
 <template>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div>
-      <p class="pb-2">Ingresa los números no dependientes ( <b>EJE X</b> ). Deben coincidir en cantidad con los dependientes.</p>
+      <p class="pb-2">Ingresa los números no dependientes ( <b>EJE X</b> ). <br> Deben coincidir con los dependientes.</p>
       <textarea class="textarea" rows="6" :placeholder="xTrainPlaceholder" v-model="xTrain"></textarea>
     </div>
     <div>
-      <p class="pb-2">Ingresa los números dependientes ( <b>EJE Y</b> ). Deben coincidir en cantidad con los no dependientes.</p>
+      <p class="pb-2">Ingresa los números dependientes ( <b>EJE Y</b> ). <br> Deben coincidir con los no dependientes.</p>
       <textarea class="textarea" rows="6" :placeholder="yTrainPlaceholder" v-model="yTrain"></textarea>
     </div>
   </div>
@@ -23,8 +23,10 @@
       }
     },
     watch: {
-      data() {
+      xTrain() {
         this.$store.commit('linealRegression/set_xTrain', this.$cleanDataSet(this.xTrain));
+      },
+      yTrain() {
         this.$store.commit('linealRegression/set_yTrain', this.$cleanDataSet(this.yTrain));
       }
     },
