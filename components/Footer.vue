@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="h-10 w-full"></div>
+    <div class="h-12 w-full"></div>
 
     <div class="animate__animated animate__fadeInUp animate__faster" id="fixed-footer-div">
-      <span>
+      <span class="text-center">
         &copy; {{ new Date().getFullYear() }}.
         <span v-html="currentFooterHTML"></span>
         <a
@@ -59,11 +59,11 @@ export default {
 <style scoped>
 
 #fixed-footer-div{
-  @apply h-10 border-0 border-t bg-white fixed z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
+  @apply h-12 border-0 border-t bg-white fixed z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
 }
 
 .dark-mode #fixed-footer-div{
-  @apply h-10 fixed border-t-0 z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
+  @apply h-12 fixed border-t-0 z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
   background-color: RGBA(11, 11, 11);
 }
 
