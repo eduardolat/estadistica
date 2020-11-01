@@ -2,6 +2,24 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.dark-mode {
+  @apply .bg-black;
+}
+
+.dark-mode * {
+  @apply .text-white;
+}
+
 .btn-primary {
   @apply bg-blue-500 text-white rounded shadow py-2 px-4 text-center;
 }
@@ -20,6 +38,14 @@
 
 .textarea:focus {
   @apply .outline-none .border-gray-500;
+}
+
+.dark-mode .textarea {
+  @apply .border-blue-800 .bg-blue-800 .text-white;
+}
+
+.dark-mode .textarea:focus {
+  @apply .border-gray-500;
 }
 
 .table {
