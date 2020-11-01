@@ -45,11 +45,11 @@
 }
 
 .dark-mode .textarea {
-  @apply .border-blue-800 .bg-blue-800 .text-white;
+  @apply .border-blue-800 .bg-gray-800 .text-white;
 }
 
 .dark-mode .textarea:focus {
-  @apply .border-gray-500;
+  @apply .border-gray-600;
 }
 
 .table {
@@ -61,16 +61,41 @@
   @apply bg-gray-100;
 }
 
+.dark-mode .table thead,
+.dark-mode .table tfoot {
+  @apply bg-gray-900;
+}
+
 .table tbody tr:hover {
   @apply bg-gray-200;
+}
+
+.dark-mode .table tbody tr:hover {
+  @apply bg-gray-800;
 }
 
 .table td {
   @apply .px-4 .py-2 .border;
 }
 
+.dark-mode .table td {
+  @apply border-blue-800;
+}
+
+.left-table-titles {
+  @apply .bg-gray-100;
+}
+
+.dark-mode .left-table-titles {
+  @apply .bg-gray-900;
+}
+
 select {
   @apply bg-gray-200 rounded py-2 px-4 .border w-full;
+}
+
+.dark-mode select {
+  @apply bg-gray-900 rounded py-2 px-4 .border-blue-800 w-full;
 }
 
 select:focus {
@@ -82,5 +107,13 @@ select:focus {
 }
 
 .text-input:focus {
+  @apply .outline-none .border-gray-500;
+}
+
+.dark-mode .text-input {
+  @apply bg-gray-900 rounded py-2 px-4 .border-blue-800 w-full;
+}
+
+.dark-mode .text-input:focus {
   @apply .outline-none .border-gray-500;
 }

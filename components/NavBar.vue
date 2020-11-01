@@ -61,7 +61,7 @@
 }
 
 .dark-mode #fixed-nav-div {
-  @apply p-2 shadow fixed z-40 w-full;
+  @apply p-2 shadow fixed z-40 w-full border-b border-gray-900;
   background-color: RGBA(11, 11, 11);
 }
 

@@ -3,23 +3,23 @@
     <table class="table">
         <tbody class="text-left">
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Desviación media</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Desviación media</b></td>
             <td>{{medianDeviation.toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Desviación típica</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Desviación típica</b></td>
             <td>{{typicalDeviation.toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Varianza</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Varianza</b></td>
             <td>{{variance.toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Coeficiente de variación</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Coeficiente de variación</b></td>
             <td>{{coefficientOfVariation.toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Curtosis</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Curtosis</b></td>
             <td>{{kurtosis.toFixed(2)}}</td>
           </tr>
         </tbody>

@@ -63,7 +63,7 @@ export default {
 }
 
 .dark-mode #fixed-footer-div{
-  @apply h-12 fixed border-t-0 z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
+  @apply h-12 fixed border-gray-900 z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
   background-color: RGBA(11, 11, 11);
 }
 

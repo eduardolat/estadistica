@@ -3,23 +3,23 @@
     <table class="table">
         <tbody class="text-left">
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Media geométrica</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Media geométrica</b></td>
             <td>{{$geometricMean(data).toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Media cuadrática</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Media cuadrática</b></td>
             <td>{{$cuadraticMean(data).toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Media aritmética</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Media aritmética</b></td>
             <td>{{$arithmeticMean(data).toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Mediana</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Mediana</b></td>
             <td>{{$arithmeticMedian(data).toFixed(2)}}</td>
           </tr>
           <tr>
-            <td class="bg-gray-100 whitespace-no-wrap"><b>Moda</b></td>
+            <td class="left-table-titles whitespace-no-wrap"><b>Moda</b></td>
             <td>{{$arithmeticMode(data).toFixed(2)}}</td>
           </tr>
         </tbody>
