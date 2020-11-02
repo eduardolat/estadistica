@@ -95,6 +95,11 @@
 </template>
 <script>
 export default {
+  head() {
+    return {
+      title: "Calculadora de datos no agrupados",
+    }
+  },
   methods: {
     onCopy: function (e) {
       Swal.fire(

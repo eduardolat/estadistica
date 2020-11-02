@@ -71,7 +71,7 @@
 </template>
 <script>
 export default {
-  metaInfo() {
+  head() {
     return {
       title: "Calcular Regresión Lineal Simple",
     }
