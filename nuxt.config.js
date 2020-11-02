@@ -114,6 +114,18 @@ export default {
         {
           urlPattern: "https://cdn.jsdelivr.net/.*"
         }
+      ],
+      offlineAssets: [
+        "/estadistica/chart-lottie.json",
+        "/estadistica/dots-lottie.json",
+        "/estadistica/error-lottie.json",
+        "/estadistica/geometric-shapes-lottie.json",
+        "/estadistica/line-chart-lottie.json",
+        "/estadistica/line-graph-lottie.json",
+        "/estadistica/men-chart-lottie.json",
+        "/estadistica/icon.png",
+        "/estadistica/icon.svg",
+        "/estadistica/favicon.svg"
       ]
     }
   }

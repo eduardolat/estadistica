@@ -3,7 +3,7 @@
 
     <lottie-player
       class="mx-auto h-64 animate__animated animate__fadeIn"
-      src="./men-chart-lottie.json"
+      src="/estadistica/men-chart-lottie.json"
       background="transparent"
       speed="1"
       loop
