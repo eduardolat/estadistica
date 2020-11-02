@@ -1,14 +1,16 @@
-const getDefaultState = () => {
-  return {
-    xTrain: [],
-    yTrain: [],
-    current_xTrain: [],
-    current_yTrain: [],
-    regression: null
-  };
+const defaultState = {
+  xTrain: [],
+  yTrain: [],
+  current_xTrain: [],
+  current_yTrain: [],
+  regression: null
 };
 
-export const state = getDefaultState();
+const getDefaultState = () => {
+  return { ...defaultState };
+};
+
+export const state = () => ({ ...defaultState });
 
 export const mutations = {
   resetState(state) {

@@ -1,16 +1,18 @@
-const getDefaultState = () => {
-  return {
-    data: [],
-    orderedData: [],
-    dataTable: [],
-    totalAbsoluteFrecuency: 0,
-    total_xi2_fi: 0,
-    total_d_absolute: 0,
-    total_d_absolute_2: 0
-  };
+const defaultState = {
+  data: [],
+  orderedData: [],
+  dataTable: [],
+  totalAbsoluteFrecuency: 0,
+  total_xi2_fi: 0,
+  total_d_absolute: 0,
+  total_d_absolute_2: 0
 };
 
-export const state = getDefaultState();
+const getDefaultState = () => {
+  return { ...defaultState };
+};
+
+export const state = () => ({ ...defaultState });
 
 export const mutations = {
   resetState(state) {
