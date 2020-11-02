@@ -3,7 +3,7 @@
 
     <lottie-player
       class="mx-auto h-64 animate__animated animate__fadeIn"
-      src="./error-lottie.json"
+      src="/estadistica/error-lottie.json"
       background="transparent"
       speed="1"
       loop
