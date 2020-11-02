@@ -11,7 +11,12 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Calculadora estadística de datos no agrupados y regresión lineal simple."
+      }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "./favicon.svg" },
@@ -83,5 +88,33 @@ export default {
   // Configuración del router
   router: {
     base: "/estadistica/"
+  },
+
+  // Configurar PWA
+  pwa: {
+    icon: {
+      source: "[srcDir]/[staticDir]/icon-pwa.png",
+      fileName: "icon-pwa.png"
+    },
+    meta: {
+      mobileAppIOS: true,
+      name: "Calculadora Estadística",
+      lang: "es"
+    },
+    manifest: {
+      name: "Calculadora Estadística",
+      short_name: "Calculadora Estadística",
+      description:
+        "Calculadora estadística de datos no agrupados y regresión lineal simple.",
+      lang: "es",
+      useWebmanifestExtension: false
+    },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: "https://cdn.jsdelivr.net/.*"
+        }
+      ]
+    }
   }
 };
