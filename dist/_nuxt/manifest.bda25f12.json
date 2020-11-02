@@ -1,7 +1,7 @@
 {
-  "name": "estadistica",
-  "short_name": "estadistica",
-  "description": "## Integrantes del grupo",
+  "name": "Calculadora Estadística",
+  "short_name": "Calculadora Estadística",
+  "description": "Calculadora estadística de datos no agrupados y regresión lineal simple.",
   "icons": [
     {
       "src": "/estadistica/_nuxt/icons/icon_64x64.b5d4c2.png",
@@ -49,5 +49,5 @@
   "start_url": "/estadistica/?standalone=true",
   "display": "standalone",
   "background_color": "#ffffff",
-  "lang": "en"
+  "lang": "es"
 }
