@@ -29,7 +29,7 @@
             type: 'scatter',
             data: {
               datasets: [{
-                  label: 'Nube de puntos del dataset',
+                  label: 'Nube de puntos',
                   data: this.current_xTrain.map((x, i) => {
                     return { x, y: this.current_yTrain[i] };
                   }),
