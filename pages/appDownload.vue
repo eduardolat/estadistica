@@ -11,7 +11,7 @@
     ></lottie-player>
 
     <div class="my-4 text-center">
-      <a href="https://raw.githubusercontent.com/eduardodevop/estadistica/gh-pages/calculadora-estadistica.apk" target="_blank">
+      <a href="https://raw.githubusercontent.com/eduardodevop/estadistica/builded-apk/calculadora-estadistica.apk" target="_blank">
         <button class="btn-primary">Descargar APK Para Android <i class="fas fa-download"></i></button>
       </a>
     </div>
