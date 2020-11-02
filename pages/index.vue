@@ -20,6 +20,12 @@
 
         <span class="inline-block text-xl font-bold mb-2">
           Datos limpios - {{ cleanData.length }} números encontrados
+          <button type="button"
+                  v-clipboard:copy="cleanData.join('\n')"
+                  v-clipboard:success="onCopy"
+                  v-clipboard:error="onError" class="rounded bg-blue-500 px-1 text-white">
+            <i class="fas fa-copy"></i>
+          </button>
         </span>
         <textarea class="textarea" rows="6" disabled>{{ cleanData.join('\n') }}</textarea>
 
@@ -28,6 +34,12 @@
 
         <span class="inline-block text-xl font-bold mb-2">
           Datos ordenados - {{ orderedData.length }} números encontrados
+          <button type="button"
+                  v-clipboard:copy="orderedData.join('\n')"
+                  v-clipboard:success="onCopy"
+                  v-clipboard:error="onError" class="rounded bg-blue-500 px-1 text-white">
+            <i class="fas fa-copy"></i>
+          </button>
         </span>
         <textarea class="textarea" rows="6" disabled>{{ orderedData.join('\n') }}</textarea>
 
@@ -83,6 +95,22 @@
 </template>
 <script>
 export default {
+  methods: {
+    onCopy: function (e) {
+      Swal.fire(
+        'Tarea realizada con éxito 🥰',
+        'Los datos fueron copiados a tu portapapeles',
+        'success'
+      )
+    },
+    onError: function (e) {
+      Swal.fire(
+        'Ups... Ocurrió un error 😥',
+        'Parece que ocurrió un error al intentar copiar los datos solicitados',
+        'error'
+      )
+    }
+  },
   computed: {
     cleanData() {
       return this.$store.state.statistics.data;

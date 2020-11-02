@@ -33,7 +33,13 @@
       <h1 class="text-xl font-bold">Regresión lineal calculada con éxito</h1>
       <div class="text-lg my-2">
         La ecuación del modelo es:
-        <span id="equation">Y&nbsp;=&nbsp;(&nbsp;{{regression.slope.toFixed(2)}}&nbsp;*&nbsp;X&nbsp;)&nbsp;+&nbsp;{{regression.intercept.toFixed(2)}}</span>
+        <span id="equation" class="block my-2 font-bold">{{ecuation}}</span>
+        <button type="button"
+                v-clipboard:copy="ecuation"
+                v-clipboard:success="onCopy"
+                v-clipboard:error="onError" class="rounded bg-blue-500 px-1 text-white">
+          Copiar ecuación <i class="fas fa-copy"></i>
+        </button>
       </div>
 
       <div class="text-xl font-bold my-4">
@@ -85,9 +91,26 @@ export default {
     },
     regression() {
       return this.$store.state.linealRegression.regression;
+    },
+    ecuation() {
+      return `Y = ( ${this.regression.slope.toFixed(2)} * X ) + ${this.regression.intercept.toFixed(2)}`;
     }
   },
   methods: {
+    onCopy: function (e) {
+      Swal.fire(
+        'Tarea realizada con éxito 🥰',
+        'Los datos fueron copiados a tu portapapeles',
+        'success'
+      )
+    },
+    onError: function (e) {
+      Swal.fire(
+        'Ups... Ocurrió un error 😥',
+        'Parece que ocurrió un error al intentar copiar los datos solicitados',
+        'error'
+      )
+    },
     compute() {
 
       if(this.xTrain.length < 1){
