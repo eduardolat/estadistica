@@ -123,6 +123,7 @@ export default {
         "/estadistica/line-chart-lottie.json",
         "/estadistica/line-graph-lottie.json",
         "/estadistica/men-chart-lottie.json",
+        "/estadistica/android-lottie.json",
         "/estadistica/icon.png",
         "/estadistica/icon.svg",
         "/estadistica/favicon.svg"

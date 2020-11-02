@@ -3,15 +3,17 @@
 
     <lottie-player
       class="mx-auto h-64 animate__animated animate__fadeIn"
-      src="/estadistica/error-lottie.json"
+      src="/estadistica/android-lottie.json"
       background="transparent"
       speed="1"
       loop
       autoplay
     ></lottie-player>
 
-    <div class="my-4 text-center text-2xl font-bold">
-      Ocurrió un error inesperado.
+    <div class="my-4 text-center">
+      <a href="http://eduardodevop.github.io/estadistica/calculadora-estadistica.apk" target="_blank">
+        <button class="btn-primary">Descargar APK Para Android <i class="fas fa-download"></i></button>
+      </a>
     </div>
 
   </div>
