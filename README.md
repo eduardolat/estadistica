@@ -2,9 +2,9 @@
 
 ## Integrantes del grupo
 
-- Luis Eduardo Jeréz Girón - 1990-19-6340
-- Fernan Emilio Rixquiacche Perez - 1990-19-5454
-- Hugo Ernesto Barrios Rosales - 1990-19-6344
+- 🐍 Luis Eduardo Jeréz Girón - 1990-19-6340
+- 🦢 Fernan Emilio Rixquiacche Perez - 1990-19-5454
+- 🐱 Hugo Ernesto Barrios Rosales - 1990-19-6344
 
 ## Requisitos
 
