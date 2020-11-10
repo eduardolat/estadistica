@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "io.github.eduardodevop.twa",
+                   "sha256_cert_fingerprints": ["53:39:33:6D:3E:31:D1:AF:3D:AA:52:BD:D1:12:7F:78:4F:C0:BB:C8:47:0E:64:CD:1D:57:5F:5D:84:D6:45:48"] }
+    }]
