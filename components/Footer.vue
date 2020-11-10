@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-12 w-full"></div>
+    <div class="h-16 w-full"></div>
 
     <div class="animate__animated animate__fadeInUp animate__faster" id="fixed-footer-div">
       <span class="text-center">
@@ -59,11 +59,11 @@ export default {
 <style scoped>
 
 #fixed-footer-div{
-  @apply h-12 border-0 border-t bg-white fixed z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
+  @apply h-16 border-0 border-t bg-white fixed z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
 }
 
 .dark-mode #fixed-footer-div{
-  @apply h-12 fixed border-gray-900 z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
+  @apply h-16 fixed border-gray-900 z-40 bottom-0 w-full flex justify-center content-center flex-wrap;
   background-color: RGBA(11, 11, 11);
 }
 
