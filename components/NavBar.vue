@@ -7,7 +7,7 @@
 
           <div class="flex">
 
-            <nuxt-link to="/" class="flex">
+            <div class="flex noselect">
 
               <img src="icon.svg" class="w-18" alt="Ícono de la aplicación">
 
@@ -15,7 +15,7 @@
                 <span class="text-2xl ml-2">Estadística</span>
               </div>
 
-            </nuxt-link>
+            </div>
 
           </div>
 
