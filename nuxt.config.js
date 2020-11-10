@@ -140,7 +140,9 @@ export default {
         "/estadistica/android-lottie.json",
         "/estadistica/icon.png",
         "/estadistica/icon.svg",
-        "/estadistica/favicon.svg"
+        "/estadistica/favicon.svg",
+        "/estadistica/instalacion-apple.mp4",
+        "/estadistica/apple-siri.png"
       ]
     }
   }
