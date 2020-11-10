@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <div class="animate__animated animate__fadeInDown animate__faster" id="fixed-nav-div">
+    <div class="animate__animated animate__fadeInDown animate__faster" id="fixed-nav-div" v-click-outside="closeMenu">
 
       <div class="flex justify-between container mx-auto flex-wrap animate__animated animate__fadeInDown z-10">
 
@@ -56,6 +56,16 @@
         openMenu: false
       }
     },
+    methods: {
+      closeMenu() {
+        this.openMenu = false;
+      }
+    },
+    watch:{
+      $route(){
+        this.closeMenu();
+      }
+    }
   }
 </script>
 
