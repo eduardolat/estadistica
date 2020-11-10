@@ -26,8 +26,10 @@
       darkMode(newValue) {
         if(newValue){
           document.getElementsByTagName("body")[0].classList.add("dark-mode");
+          localStorage.setItem('dark-mode', JSON.stringify(true));
         }else{
           document.getElementsByTagName("body")[0].classList.remove("dark-mode");
+          localStorage.removeItem('dark-mode');
         }
       }
     },
