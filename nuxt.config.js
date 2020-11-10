@@ -94,7 +94,8 @@ export default {
   pwa: {
     icon: {
       source: "[srcDir]/[staticDir]/icon-pwa.png",
-      fileName: "icon-pwa.png"
+      fileName: "icon-pwa.png",
+      iconHash: "icon"
     },
     meta: {
       mobileAppIOS: true,
@@ -107,7 +108,8 @@ export default {
       description:
         "Calculadora estadística de datos no agrupados y regresión lineal simple.",
       lang: "es",
-      useWebmanifestExtension: false
+      useWebmanifestExtension: false,
+      fileName: "manifest.json"
     },
     workbox: {
       runtimeCaching: [
